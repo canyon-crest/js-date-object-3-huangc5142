@@ -16,7 +16,7 @@
 // element with ID "warmUpDate".
 
 // STEP 1: Create a new Date object using: let now = new Date();
-now = new Date();
+let now = new Date();
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 document.getElementById("warmUpDate").innerHTML = days[now.getDay()];
 // STEP 2: Use .getDay() to get the day of the week as a number.
@@ -39,10 +39,10 @@ document.getElementById("warmUpDate").innerHTML = days[now.getDay()];
 // Display the current date in the format: M/D/YYYY
 // in the element with ID "myDate".
 // Example: "4/2/2025" (no leading zeros)
-d = new Date();
-month = d.getMonth()+1;
-day = d.getDate();
-year = d.getFullYear();
+let d = new Date();
+let month = d.getMonth()+1;
+let day = d.getDate();
+let year = d.getFullYear();
 document.getElementById("myDate").innerHTML = month + "/" + day + "/" + year;
 
 // STEP 6: Create a new Date object (or reuse the one from above).
@@ -65,7 +65,12 @@ document.getElementById("myDate").innerHTML = month + "/" + day + "/" + year;
 // Build a timer that counts up from 0, updating every ~10ms.
 // Display the elapsed time in seconds (e.g., "1.230") in
 // the element with ID "myTimer".
-
+let startTime = new Date().getTime();
+let endTime = "";
+function time(){
+    myTimer.innerHTML = ((new Date().getTime()-startTime)/1000).toFixed(3);
+}
+let interval = setInterval(time, 10);
 // STEP 11: Record the start time using new Date().getTime()
 //          This gives you the current time in milliseconds.
 
