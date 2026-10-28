@@ -92,7 +92,20 @@ let interval = setInterval(time, 10);
 //     change button text to "Start"
 //   - If timer is stopped: restart it from 0 and change
 //     button text to "Stop"
-
+let running = true;
+document.getElementById("myBtn").addEventListener('click', function(){
+    if (running == true) {
+        clearInterval(interval);
+        myBtn.innerHTML = "Start"
+        running = false;
+    }
+    else {
+        startTime = new Date().getTime();
+        interval = setInterval(time, 10);
+        myBtn.innerHTML = "Stop";
+        running = true;
+    }
+})
 // STEP 13: Create a variable to track whether the timer is
 //          currently running (let running = true;)
 
