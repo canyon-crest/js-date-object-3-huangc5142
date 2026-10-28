@@ -16,7 +16,9 @@
 // element with ID "warmUpDate".
 
 // STEP 1: Create a new Date object using: let now = new Date();
-
+now = new Date();
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+document.getElementById("warmUpDate").innerHTML = days[now.getDay()];
 // STEP 2: Use .getDay() to get the day of the week as a number.
 //         Sunday = 0, Monday = 1, Tuesday = 2, ... Saturday = 6
 
@@ -37,6 +39,11 @@
 // Display the current date in the format: M/D/YYYY
 // in the element with ID "myDate".
 // Example: "4/2/2025" (no leading zeros)
+d = new Date();
+month = d.getMonth()+1;
+day = d.getDate();
+year = d.getFullYear();
+document.getElementById("myDate").innerHTML = month + "/" + day + "/" + year;
 
 // STEP 6: Create a new Date object (or reuse the one from above).
 
